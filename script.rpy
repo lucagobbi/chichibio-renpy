@@ -1,8 +1,8 @@
-﻿define corrado = Character("Corrado", color="#8B0000", image="corrado")
-define chichibio = Character("Chichibio", color="#1E90FF", image="chichibio")
-define brunetta = Character("Brunetta", color="#FF69B4", image="brunetta")
+﻿define corrado = Character("Corrado", color="#7b2b2b", image="corrado")
+define chichibio = Character("Chichibio", color="#34583f", image="chichibio")
+define brunetta = Character("Brunetta", color="#846117", image="brunetta")
 define narrator = Character(None, what_italic=True)
-define decameron = Character("Decameron", color="#228B22") # Guida educativa
+define decameron = Character("Decameron", color="#4f3104") # Guida educativa
 
 # Variabili per il sistema di punteggio
 default knowledge_points = 0
@@ -23,11 +23,25 @@ image brunetta normal = "characters/brunetta/normal.png"
 image brunetta pleading = "characters/brunetta/pleading.png"
 
 # Backgrounds
-image bg kitchen = "bg/kitchen.png"
-image bg dining_room = "bg/dining_room.png"
-image bg bedroom = "bg/bedroom.png"
-image bg riverside = "bg/riverside.png"
-image bg florence = "bg/florence.png"
+image bg kitchen:
+    "bg/kitchen.png"
+    xysize(1920, 1080)
+
+image bg dining_room:
+    "bg/dining_room.png"
+    xysize(1920, 1080)
+
+image bg bedroom:
+    "bg/bedroom.png"
+    xysize(1920, 1080)
+
+image bg riverside:
+    "bg/riverside.png"
+    xysize(1920, 1080)
+
+image bg florence:
+    "bg/florence.png"
+    xysize(1920, 1080)
 
 init python:
     def show_happy_reaction():
@@ -59,7 +73,7 @@ screen decameron_info(title, content):
             text title:
                 xalign 0.5
                 size 30
-                color "#8B0000"
+                color "#302300"
                 
             text content:
                 size 22
@@ -77,7 +91,7 @@ screen knowledge_notification(amount):
         yalign 0.1
         padding (20, 10)
         
-        text "+[amount] Conoscenza Decameron" color "#1E90FF" size 24
+        text "+[amount] Conoscenza Decameron" color "#423500" size 24
     
     timer 2.0 action Hide("knowledge_notification")
 
@@ -115,7 +129,7 @@ label start:
     
     play sound "audio/sfx/cooking.mp3"
 
-    show chichibio normal at center
+    show chichibio normal at left
     
     decameron "Nel Medioevo, la cucina delle case nobili richiedeva grande abilità e conoscenza. I cuochi erano figure importanti nella gerarchia della servitù."
     
@@ -138,7 +152,7 @@ label cooking_minigame:
     $ cooking_score = 0
     
     narrator "Per preparare la gru alla perfezione, Chichibio deve fare le scelte giuste."
-    show chichibio normal at center
+    show chichibio normal at left
     
     chichibio "Vediamo cosa serve per questa ricetta speciale..."    
     # Primo passo: scegliere le spezie
@@ -447,7 +461,7 @@ label continue_cooking_story:
     
     hide brunetta with moveoutright
     
-    show chichibio worried at center
+    show chichibio worried
     
     chichibio "Oh cielo... e ora come faccio con il signor Corrado?"
     
@@ -515,7 +529,7 @@ label river_scene:
     
     narrator "La mattina dopo, appena spuntata l'alba, Corrado, a cui il sonno non era riuscito a far sbollire la rabbia, si alzò ancora tutto infuriato."
     
-    show corrado angry at center
+    show corrado angry at left
     
     corrado "Il mio cavallo! E fate montare anche Chichibio su un ronzino!"
     
