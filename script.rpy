@@ -91,15 +91,16 @@ screen knowledge_notification(amount):
         yalign 0.1
         padding (20, 10)
         
-        text "+[amount] Conoscenza Decameron" color "#423500" size 24
+        text "+[amount] Conoscenza Decameron" color "#423500" size 28
     
     timer 2.0 action Hide("knowledge_notification")
+
+init:
+    $ renpy.music.play("audio/music/medieval_theme.mp3", fadein=2.0, if_changed=True)
 
 # Inizio del gioco
 label start:
     scene black
-
-    play music "audio/music/medieval_theme.mp3" fadein 2.0
     
     # Introduzione
     show text "Il Decamerone\n\ndi Giovanni Boccaccio" with dissolve
@@ -139,9 +140,6 @@ label start:
     chichibio "Una bellissima gru! La preparerò con la massima cura per il mio signore."
     
     narrator "Chichibio si mise all'opera per preparare la gru. Mentre la cuoceva con attenzione, il profumo delizioso si diffuse per tutta la cucina."
-    
-    # Quiz educativo sulla cucina medievale
-    decameron "Quali spezie erano più preziose nella cucina medievale?"
     
     jump cooking_minigame
 
@@ -526,6 +524,8 @@ label dinner_scene:
 # Scena del fiume - seguendo fedelmente la novella
 label river_scene:
     scene bg bedroom with fade
+
+    play music "audio/music/medieval_theme.mp3" fadein 2.0
     
     narrator "La mattina dopo, appena spuntata l'alba, Corrado, a cui il sonno non era riuscito a far sbollire la rabbia, si alzò ancora tutto infuriato."
     
@@ -588,14 +588,14 @@ label river_scene:
     corrado "Aspetta, adesso ti faccio vedere io che ne hanno due."
     
     narrator "Perciò si diresse verso quelle più vicine e gridò:"
-    
-    corrado "HOHÒ!"
-    
+
     play sound "audio/sfx/hoho.mp3"
     
-    narrator "Le gru tirarono fuori l'altra zampa, presero la rincorsa e scapparono via."
+    corrado "HOHÒ!"
+
+    play sound "audio/sfx/crane_flying.mp3" fadein 2.0
     
-    play sound "audio/sfx/crane_flying.mp3"
+    narrator "Le gru tirarono fuori l'altra zampa, presero la rincorsa e scapparono via."
     
     corrado "Che te ne pare? Sei convinto o no che ne hanno due?"
     
