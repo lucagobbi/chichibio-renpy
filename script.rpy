@@ -95,12 +95,11 @@ screen knowledge_notification(amount):
     
     timer 2.0 action Hide("knowledge_notification")
 
-init:
-    $ renpy.music.play("audio/music/medieval_theme.mp3", fadein=2.0, if_changed=True)
-
 # Inizio del gioco
 label start:
     scene black
+
+    play music "audio/music/medieval_theme.mp3" fadein 2.0
     
     # Introduzione
     show text "Il Decamerone\n\ndi Giovanni Boccaccio" with dissolve
