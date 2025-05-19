@@ -102,11 +102,11 @@ label start:
     play music "audio/music/medieval_theme.mp3" fadein 2.0
     
     # Introduzione
-    show text "Il Decamerone\n\ndi Giovanni Boccaccio" with dissolve
-    $ renpy.pause(2.0, hard=True)
+    show text "{size=60}{color=#f0d080}Il Decamerone\n\n{size=50}di Giovanni Boccaccio{/color}{/size}" with dissolve
+    $ renpy.pause(2.5, hard=True)
     
-    show text "La novella di Chichibio e la Gru appartiene alla sesta giornata del Decameron, dedicata ai motti di spirito e alle risposte argute." with dissolve
-    $ renpy.pause(3.0, hard=True)
+    show text "{size=40}{color=#e0c070}La novella di Chichibio e la Gru appartiene alla sesta giornata del Decameron, dedicata ai motti di spirito e alle risposte argute.{/color}{/size}" with dissolve
+    $ renpy.pause(4.0, hard=True)
     
     # Inizio della storia
     scene bg florence with fade
